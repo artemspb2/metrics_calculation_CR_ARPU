@@ -1,4 +1,4 @@
-Итоговый проект курса "Аналитика данных"
+Итоговый проект курса "Аналитика данных" / The final project of the course "Data Analytics" (English comments are after Russian)
 
 Задание выполнено в 3 файлах .ipynb + 2 презентациях PowerPoint
 
@@ -14,9 +14,6 @@ CR ARPU students AB test
 Auto_function_task3.ipynb
 
 Описание задания:
-
-
-
 
 Проект: вариант 2
 Задание 1. A/B–тестирование
@@ -108,3 +105,112 @@ ARPU считается относительно всех пользовател
 
 Реализуйте функцию, которая будет автоматически подгружать информацию из дополнительного файла groups_add.csv (заголовки могут отличаться) и на основании дополнительных параметров пересчитывать метрики.
 Реализуйте функцию, которая будет строить графики по получаемым метрикам.
+
+
+The final project of the course "Data Analytics"
+
+Assignment completed in 3 .ipynb files + 2 PowerPoint presentations
+
+1 task
+first_task.ipynb 
+New payment method
+
+2 task
+SQLtask.ipynb
+CR ARPU students AB test
+
+3 task
+Auto_function_task3.ipynb
+
+Task Description:
+
+Project: option 2.
+Assignment 1: A/B Testing
+1.1 Prerequisite
+
+One of the main tasks of an analyst on our team is to conduct experiments correctly. To do this we use the A/B testing method. During one hypothesis testing, the target group was offered a new payment mechanics on the site, while the control group was left with the basic mechanics. As a task you need to analyze the results of the experiment and conclude whether to run the new payment mechanics on all users.
+
+1.2 Input data
+
+As input data you have 4 csv files:
+
+groups.csv - file with information about user's membership in control or experimental group (A - control, B - target group) 
+groups_add.csv - an additional file with users that was sent to you 2 days after the data transfer
+active_studs.csv - file with information about users who have logged on to the platform during the experiment. 
+checks.csv - file with information about users' payments on the experiment days. 
+1.3 Questions
+
+We suggest you answer the following questions:
+
+What metrics are you looking at in your analysis and why?
+Are there differences in the metrics and what might they be related to?
+Are the differences statistically significant?
+Is it worth running the new mechanics on all users?
+This list of questions is not required, and you can base your answer on your own plan.
+
+1.4 Answer Requirements
+
+You must use the Python programming language to complete the test assignment. 
+The file must contain comments on what you do with the data. 
+The file must be a complete report with the conclusions drawn from the research.
+Task 2. SQL
+2.1 Very hard students.
+
+2.1.1 Condition.
+
+Educational courses consist of various lessons, each of which consists of several small assignments. Each such small assignment is called a "pea."
+
+Let's call a user who solved 20 peas correctly at least once during the current month a very hard learner.
+
+2.1.2 Task.
+
+A default.peas table is given:
+
+Attribute name Attribute type Meaning
+st_id int student ID
+timest timestamp Time of solving the card
+correct bool Is the pea solved correctly?
+subject text Discipline the pea is in
+
+
+You need to write an optimal query that will give you information about the number of very hard students. NB! By hard student we mean a student who solved 20 problems correctly in the current month.
+
+2.2 Optimizing the Funnel
+
+2.2.1 Condition.
+
+The educational platform offers students courses based on the trial model: a student can solve only 30 peas a day for free. For an unlimited number of assignments in a particular discipline, the student must purchase full access. The team conducted an experiment where the new payment screen was tested.
+
+2.2.2 Task.
+
+Given tables: default.peas (see above), default.studs:
+
+Attribute name Attribute type Meaning
+st_id int student ID
+test_grp text The label of the student in this experiment
+and default.final_project_check:
+
+Attribute name Attribute type Meaningful value
+st_id int student ID
+sale_time timestamp Time of purchase
+money int price at which the course was purchased
+subject text 	
+You need to upload the following information about user groups in one request
+
+ARPU 
+ARPAU 
+CR into purchase 
+CR of the active user in a purchase 
+CR of the user from the math activity (subject = 'math') into the purchase of the math course
+ARPU is counted relative to all users in the groups.
+
+A user who solved more than 10 problems correctly in any discipline at all times is considered active.
+
+Active in Math is a user who solved 2 or more math problems correctly over time.
+
+All data is in tabular form in ClickHouse.
+Problem 3: Python
+3.1 Task.
+
+Implement a function that will automatically load information from additional groups_add.csv file (headings may vary) and recalculate metrics based on additional parameters.
+Implement a function that will plot the metrics it receives.
